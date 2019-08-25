@@ -1,12 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
-<% @news["Data"] %>
-<ul>
-<% for x in @news["Data"] %>
-    <img src="<%= x["imageurl"] %>"><br/>
-    <strong><%= x["title"] %></strong><br/>
-    <%= x["body"] %><br/><br/>
-    <a href="<%= x["url"] %>">Read more...</a><br/><hr><br/>
-    <% end %>
-</ul>
+<div class="div container">
+    <div class="row">
+      <% for x in @news["Data"] %>
+        <div class="div col-sm">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<%= x["imageurl"] %>" alt="Crypto Thumbnail">
+            <div class="card-body">
+              <h5 class="card-title"><%= x["title"]%></h5>
+              <p class="card-text"><%= x["body"] %></p>
+              <a href="<%= x["url"] %>" class="btn btn-dark">Read more...</a>
+            </div>
+          </div>
+        <br/>
+        </div>
+      <% end %>
+    </div>
+</div>
